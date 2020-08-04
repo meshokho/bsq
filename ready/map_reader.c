@@ -6,7 +6,7 @@
 /*   By: teloise <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 15:26:30 by teloise           #+#    #+#             */
-/*   Updated: 2020/08/04 14:26:17 by teloise          ###   ########.fr       */
+/*   Updated: 2020/08/04 15:23:33 by teloise          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	filling_map(t_map *map, int fd)
 		map->map[j] = ft_strdup(tmp);
 		j++;
 	}
-	map->col_num = j - 1;
+	map->col_num = i - 1;
 	map->lines_num = map->map[0][0] - 48;
 	map->empty = map->map[0][1];
 	map->obstacle = map->map[0][2];
@@ -91,6 +91,9 @@ int		main(void)
 
 	map = read_file("map.txt");
 	print_tab(map.map, map.col_num + 1);
+
+	//ft_putchar(map.col_num + 48);
+	//ft_putchar(map.lines_num + 48);
 	max = map_pointing(map);
 	ft_putchar(max.x + 48);
 	ft_putchar(max.y + 48);

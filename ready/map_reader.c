@@ -6,7 +6,7 @@
 /*   By: teloise <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 15:26:30 by teloise           #+#    #+#             */
-/*   Updated: 2020/08/04 12:52:35 by teloise          ###   ########.fr       */
+/*   Updated: 2020/08/04 14:26:17 by teloise          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	filling_map(t_map *map, int fd)
 		j++;
 	}
 	map->col_num = j - 1;
-	map->lines_num = map->map[0][0];
+	map->lines_num = map->map[0][0] - 48;
 	map->empty = map->map[0][1];
 	map->obstacle = map->map[0][2];
 	map->full = map->map[0][3];

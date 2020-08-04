@@ -6,7 +6,7 @@
 /*   By: teloise <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 12:00:45 by teloise           #+#    #+#             */
-/*   Updated: 2020/08/04 13:46:39 by teloise          ###   ########.fr       */
+/*   Updated: 2020/08/04 14:40:12 by teloise          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ t_square	try_square(int i, int j, t_map map)
 	int l;
 
 	square.len = 0;
-	square.x = i;
-	square.y = j;
+	square.x = j;
+	square.y = i;
 	while (square.len < map.col_num)
 	{
 		l = 0;
 		square.len++;
-		while (l < square.len && (j + l <= map.lines_num))
+		while (l < square.len)
 		{
 			k = 0;
-			while (k < square.len && (i + k < map.col_num))
+			while (k < square.len)
 			{
-				if (map.map[i+k][j+l] == map.obstacle)
+				if (i + k > map.col_num || j + l > map.lines_num || map.map[i+k][j+l] == map.obstacle)
 					return (square);
 				k++;
 			}
